@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -94,4 +94,291 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10px 0;
+}
+
+.nav-div {
+  padding: 8px 0;
+  width: 93%;
+  margin: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.h1 {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0em;
+  color: #0D3356;
+}
+
+.nav-txt {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#categorie {
+  border: none;
+  background: #fff;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#bag-btn {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+}
+
+#item-num {
+  position: absolute;
+  margin-right: -10px;
+  margin-bottom: 35px;
+  font-size: 7px;
+  padding: 1.5px 3px;
+  color: #fff;
+  background-color: #303E6F;
+  border-radius: 50%;
+}
+
+.fa-solid {
+  position: relative;
+  /* color: #FFA500; */
+}
+
+#bell-btn {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+}
+
+#bells {
+  position: absolute;
+  margin-right: -10px;
+  margin-bottom: 35px;
+  font-size: 7px;
+  padding: 3px;
+  color: #fff;
+  background-color: #ad611a;
+  border-radius: 50%;
+}
+
+.img1 {
+  width: 100%;
+}
+
+#img1 {
+  width: 22%;
+}
+
+.gm {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  color: #C0C3C6;
+}
+
+.sj {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  color: #1D364D;
+}
+
+.second-div {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 200px; */
+  width: 93%;
+  margin: auto;
+  padding-top: 50px;
+  background: linear-gradient(75.04deg, #F4E8F3 0%, #F3EFF6 52.07%, #EEE0F9 102.02%);
+}
+
+.grab {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 50px;
+}
+
+.grab-text {
+  width: 300px;
+}
+
+.h3 {
+  color: #3A4980;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 41px;
+  letter-spacing: 0em;
+}
+
+#buy-now {
+  width: 136px;
+  height: 49px;
+  top: 327px;
+  left: 135px;
+  border: none;
+  color: #fff;
+  border-radius: 29.5px;
+  background: #3A4980;
+}
+
+.over-img {
+  /* padding-right: 100px; */
+  margin-bottom: 0;
+}
+
+#over-img {
+  margin-top: -77px;
+  padding: 0 50px;
+}
+
+.nav-two {
+  width: 93%;
+  margin: auto;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav2 {
+  display: flex;
+  gap: 0.7rem;
+}
+
+#select {
+  padding: 5px 8px;
+  border: none;
+  border-radius: 28px;
+  background: #EBEDEC;
+}
+
+#select1 {
+  padding: 5px 8px;
+  border: 1px solid #e2e2e2;
+  border-radius: 28px;
+  background: #fff;
+}
+
+.display-products {
+  width: 93%;
+  margin: auto;
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.product-div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.img-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.prod-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #F7F5F7;
+}
+
+#product-img {
+  width: 70%;
+}
+
+.name-price {
+  padding: 10px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prod-name {
+  color: #667085;
+  font-size: 15px;
+}
+
+.stars {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.types-of {
+  font-size: 10px;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #98A2B3;
+}
+
+.buttons {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#add-chart {
+  padding: 8px 12px;
+  background: #3A4980;
+  border: 1px solid #000;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 12px;
+}
+
+#add-list {
+  padding: 8px 12px;
+  color: #3A4980;
+  border: 1px solid #e2e2e2;
+  border-radius: 25px;
+  background: #fff;
+  font-size: 12px;
 }
