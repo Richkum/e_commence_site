@@ -1,9 +1,25 @@
-const apiUrl = 'https://dummyjson.com/products'
-
-async function getApi() {
+export async function getApi() {
+  const apiUrl = 'https://dummyjson.com/products/categories'
   const response = await fetch(apiUrl)
   const data = await response.json()
-  console.log(data);
+  const actualdata = data
+return actualdata
 }
 
-getApi()
+export async function getCategory(category) {
+  const secondUrl = `https://dummyjson.com/products/${category}/smartphones`
+  const response = await fetch(secondUrl)
+  const data = await response.json()
+  const myData = data.products
+  return myData
+}
+
+    // fetching second Api
+
+export async function getSecondApi() {
+  const secondUrl = 'https://dummyjson.com/products?limit=0&skip=0&'
+  const response = await fetch(secondUrl)
+  const data = await response.json()
+  const myData = data.products
+  return myData
+}

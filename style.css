@@ -136,10 +136,11 @@ body {
 .nav-txt {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 #categorie {
+  outline: none;
   border: none;
   background: #fff;
 }
@@ -366,7 +367,7 @@ body {
 }
 
 #add-chart {
-  padding: 8px 12px;
+  padding: 6px 8px;
   background: #3A4980;
   border: 1px solid #000;
   border-radius: 25px;
@@ -375,10 +376,50 @@ body {
 }
 
 #add-list {
-  padding: 8px 12px;
+  padding: 6px 8px;
   color: #3A4980;
   border: 1px solid #e2e2e2;
   border-radius: 25px;
   background: #fff;
   font-size: 12px;
+}
+
+.prev-next {
+  padding-top: 60px;
+  width: 93%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#prev {
+  color: #667085;
+  font-size: 13px;
+  border: 1px solid #F3F3F3;
+  border-radius: 8px;
+  background: #F3F3F3;
+  padding: 7px;
+}
+
+.numbs {
+  display: flex;
+  gap: 0.2rem;
+}
+
+#numb {
+  font-size: 10px;
+  border-radius: 5px;
+  background: linear-gradient(75.04deg, #F4E8F3 0%, #F3EFF6 52.07%, #EEE0F9 102.02%);
+  padding: 8px;
+}
+
+#next {
+  color: #667085;
+  font-size: 13px;
+  border: 1px solid #F3F3F3;
+  border-radius: 8px;
+  background: #F3F3F3;
+  padding: 7px;
 }

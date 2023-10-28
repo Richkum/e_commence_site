@@ -2,6 +2,18 @@
 // import javascriptLogo from './javascript.svg'
 // import viteLogo from '/vite.svg'
 // import { setupCounter } from './counter.js'
+import {getApi} from "./api.js"
+import {getSecondApi} from "./api.js"
+import {getCategory} from './api.js'
+
+const atum = await getApi()
+// console.log(atum);
+const catData = await getCategory()
+console.log(catData);
+
+const mydata = await getSecondApi()
+// console.log(mydata)
+
 
 
 const navDiv = document.querySelector(".nav-div")
@@ -40,7 +52,14 @@ export function navbar () {
 </nav>
 `
 }
-navbar () 
+
+navbar ()
+document.getElementById('categorie').innerHTML = atum.map((item)=>
+  `<select name="categorie" id="categorie">
+  <!-- <option id="option" value="option" checked>Category</option> --!>
+   <option id="option" value="option">${item}</option>
+   </select>`
+ )
 
 const secDiv = document.querySelector('.second-div')
 export function mainImg() {
@@ -92,40 +111,54 @@ description()
 
 const dispProduct = document.querySelector('.display-products')
 export function displayProduct() {
-  return dispProduct.innerHTML =`
-  <div class="product-div">
-  <div class="img-name">
-    <div class="prod-img">
-      <img id="product-img" src="./public/My project (1) 1.png" alt="">
-    </div>
-      <div class="name-price">
-        <p class="prod-name">TDX Sinkers</p>
-        <h5 class="prod-price">₹ 675.00</h5>             
+ mydata.forEach(element => {
+  dispProduct.innerHTML += `<div class="product-div">
+    <div class="img-name">
+      <div class="prod-img">
+        <img id="product-img" src="${element.thumbnail}" alt="">
       </div>
-  </div>
-  <div class="stars">
-    <p class="types-of">5 types of shoos available</p>
-    <div class="star">
-      <img src="./public/Star icon.png" alt="">
-      <img src="./public/Star icon.png" alt="">
-      <img src="./public/Star icon.png" alt="">
-      <img src="./public/Star icon.png" alt="">
-      <img src="./public/halfStar icon.png" alt="">
+        <div class="name-price">
+          <p class="prod-name">${element.title}</p>
+          <h5 class="prod-price">₹ ${element.price}</h5>             
+        </div>
+    </div>
+    <div class="stars">
+      <p class="types-of">5 types of shoos available</p>
+      <div class="star">
+        <img src="./public/Star icon.png" alt="">
+        <img src="./public/Star icon.png" alt="">
+        <img src="./public/Star icon.png" alt="">
+        <img src="./public/Star icon.png" alt="">
+        <img src="./public/halfStar icon.png" alt="">
+      </div>
+    </div>
+    <div class="buttons">
+      <button id="add-chart">Add To Chart</button>
+      <button id="add-list">Add Shortlist</button>
     </div>
   </div>
-  <div class="buttons">
-    <button id="add-chart">Add To Chart</button>
-    <button id="add-list">Add Shortlist</button>
-  </div>
-</div>
-  `
+    `
+  });
 }
 displayProduct()
 
-
-
-
-
+const prevAndNext = document.querySelector('.prev-next')
+export function preNext() {
+  return prevAndNext.innerHTML = `
+  <button id="prev">Previews</button>
+  <div class="numbs">
+    <p id="numb">1</p>
+    <p id="numb">2</p>
+    <p id="numb">3</p>
+    <p id="numb">4</p>
+    <p id="numb">5</p>
+    <p id="numb">6</p>
+    <p id="numb">7</p>
+  </div>
+  <button id="next">Next</button>
+  `
+}
+preNext()
 
 document.querySelector('#app').innerHTML 
 
