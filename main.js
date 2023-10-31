@@ -4,12 +4,12 @@
 // import { setupCounter } from './counter.js'
 import {getApi} from "./api.js"
 import {getSecondApi} from "./api.js"
-import {getCategory} from './api.js'
+// import {getCategory} from './api.js'
 
 const atum = await getApi()
 // console.log(atum);
-const catData = await getCategory()
-console.log(catData);
+// const catData = await getCategory()
+// console.log(catData);
 
 const mydata = await getSecondApi()
 // console.log(mydata)
@@ -26,7 +26,7 @@ export function navbar () {
     <option id="option" value="option">Categorie</option>
   </select>
       <p>Brand</p>
-      <p>Contact</p>
+      <a href="./contact.js"><p class="contact">Contact</p></a>
       <p>FAQ's</p>
     </div>
   </div>

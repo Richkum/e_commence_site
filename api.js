@@ -6,13 +6,13 @@ export async function getApi() {
 return actualdata
 }
 
-export async function getCategory(category) {
-  const secondUrl = `https://dummyjson.com/products/${category}/smartphones`
-  const response = await fetch(secondUrl)
-  const data = await response.json()
-  const myData = data.products
-  return myData
-}
+// export async function getCategory(category) {
+//   const secondUrl = `https://dummyjson.com/products/${category}/smartphones`
+//   const response = await fetch(secondUrl)
+//   const data = await response.json()
+//   const myData = data.products
+//   return myData
+// }
 
     // fetching second Api
 
