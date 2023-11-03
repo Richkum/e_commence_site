@@ -3,7 +3,7 @@
 // import viteLogo from '/vite.svg'
 // import { setupCounter } from './counter.js'
 import {getApi} from "./api.js"
-import {getSecondApi} from "./api.js"
+import {getSecondApi, getCategory} from "./api.js"
 // import {getCategory} from './api.js'
 
 const atum = await getApi()
@@ -11,14 +11,27 @@ const atum = await getApi()
 // const catData = await getCategory()
 // console.log(catData);
 
+let actualdat
 const mydata = await getSecondApi()
+const datafunction = await getSecondApi().then((res)=>{
+  actualdat = res
+  displayProduct(actualdat)
+  
+  console.log(actualdat);
+
+})
+
+// await getCategory().then((res)=>{
+//   const singlepro = res
+//   console.log(singlepro );
+// })
+// displayProduct(fetchh)
+
 // console.log(mydata)
-
-
 
 const navDiv = document.querySelector(".nav-div")
 export function navbar () {
-   return navDiv.innerHTML += ` <nav class="nav">
+   if(navDiv) navDiv.innerHTML += ` <nav class="nav">
   <div class="left-nav">
     <h1 class="h1">FashionHub</h1>
     <div class="nav-txt">
@@ -63,7 +76,7 @@ document.getElementById('categorie').innerHTML = atum.map((item)=>
 
 const secDiv = document.querySelector('.second-div')
 export function mainImg() {
-  return secDiv.innerHTML +=`
+  if(secDiv) secDiv.innerHTML +=`
   <div class="grab">
   <div class="grab-text">
     <h3 class="h3">Grab Upto 50% Off On Selected Headphone</h3>
@@ -79,7 +92,7 @@ mainImg()
 
 const secondNav = document.querySelector('.nav-two')
 export function description() {
-  return secondNav.innerHTML = `
+  if(secondNav) secondNav.innerHTML = `
   <nav class="nav2">
   <select name="select" id="select">
     <option id="headphone" value="headphone">Headphone type</option>
@@ -109,14 +122,15 @@ export function description() {
 }
 description()
 
-const dispProduct = document.querySelector('.display-products')
-export function displayProduct() {
- mydata.forEach(element => {
-  dispProduct.innerHTML += `<div class="product-div">
+export async function displayProduct(fetchh) {
+  const dispProduct = document.querySelector('.display-products')
+
+ fetchh.forEach(element => {
+   if(dispProduct)dispProduct.innerHTML += `<div class="product-div">
     <div class="img-name">
-      <div class="prod-img">
+      <a href="./describe.html?id=${element.id}"><div class="prod-img">
         <img id="product-img" src="${element.thumbnail}" alt="">
-      </div>
+      </div></a>
         <div class="name-price">
           <p class="prod-name">${element.title}</p>
           <h5 class="prod-price">₹ ${element.price}</h5>             
@@ -138,13 +152,14 @@ export function displayProduct() {
     </div>
   </div>
     `
+
   });
 }
-displayProduct()
+
 
 const prevAndNext = document.querySelector('.prev-next')
 export function preNext() {
-  return prevAndNext.innerHTML = `
+  if(prevAndNext) prevAndNext.innerHTML = `
   <button id="prev">Previews</button>
   <div class="numbs">
     <p id="numb">1</p>
@@ -160,6 +175,9 @@ export function preNext() {
 }
 preNext()
 
-document.querySelector('#app').innerHTML 
+// const storeData = JSON.parse(localStorage.getItem('prod-img'))
+// console.log(storeData)
+
+// document.querySelector('#app').innerHTML 
 
 // setupCounter(document.querySelector('#counter'))

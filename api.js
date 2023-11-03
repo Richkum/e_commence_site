@@ -6,20 +6,28 @@ export async function getApi() {
 return actualdata
 }
 
-// export async function getCategory(category) {
-//   const secondUrl = `https://dummyjson.com/products/${category}/smartphones`
-//   const response = await fetch(secondUrl)
-//   const data = await response.json()
-//   const myData = data.products
-//   return myData
-// }
+export async function getCategory(category) {
+  const secondUrl = `https://dummyjson.com/products/${category}`
+  const response = await fetch(secondUrl)
+  const data = await response.json()
+  // const myData = data.products
+  return data
+}
 
     // fetching second Api
 
-export async function getSecondApi() {
-  const secondUrl = 'https://dummyjson.com/products?limit=0&skip=0&'
+export async function getSecondApi(products) {
+  const secondUrl = `https://dummyjson.com/products?limit=0&skip=0&` 
   const response = await fetch(secondUrl)
   const data = await response.json()
-  const myData = data.products
-  return myData
+  return data.products
 }
+
+export async function describtionApi() {
+  const describtionUrl = 'https://dummyjson.com/products?limit=0&skip=0&'
+  const response =await fetch(describtionUrl)
+  const data =await response.json()
+  const gottenData = data.products
+  return gottenData
+}
+
