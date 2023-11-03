@@ -44,10 +44,10 @@ export function navbar () {
     </div>
   </div>
   <div class="right-nav">
-    <button id="bag-btn">
+    <a href="./addcart.html"><button id="bag-btn">
       <span id="item-num">3</span>
       <i class="fa-solid fa-bag-shopping"></i>
-    </button>
+    </button></a>
     <button id="bell-btn">
       <span id="bells"></span>
       <i class="fa-regular fa-bell"></i>

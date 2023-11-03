@@ -12,13 +12,9 @@ import {describtionApi, getApi, getCategory, getSecondApi} from './api.js'
 let  gottenData = await describtionApi()
 console.log(gottenData)
 
-const allproducts =  await getSecondApi(gottenData) 
-console.log(allproducts);
-
-
+const allproducts =  await getSecondApi(gottenData)
 
 const apiGet = await getApi()
-console.log(apiGet)
 
 const idd = new URLSearchParams(document.location.search)
 const getid = idd.get("id")
@@ -59,8 +55,6 @@ const lefSide = document.querySelector('.body-left')
   });
 }
 
-
-console.log( gottenData);
 displayLeftSide()
 
 const priceDiv = document.querySelector('.price-div')
@@ -186,3 +180,15 @@ export function displaySimcat() {
   `
 }
 displaySimcat()
+
+// const addtocard = document.querySelector("#butt-right");
+
+// addtocard.addEventListener("click", (e) => {
+//   val
+//  let addedProduts = JSON.parse(localStorage.getItem("addedcards")) || []
+//     addedProduts.push(receiveval)
+//     console.log(addedProduts);
+//   localStorage.setItem("addedcards",JSON.stringify(addedProduts))
+//   itemselectedbasket.innerHTML = addedProduts.length-1
+//   alert("added");
+// });
